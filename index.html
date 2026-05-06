@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🌦️ Weather App</h1>
+        <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <!-- Unit Toggle -->
+    <div class="unit-toggle">
+        <button onclick="setUnit('metric')">°C</button>
+        <button onclick="setUnit('imperial')">°F</button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="hidden">Loading...</div>
+
+    <!-- Error -->
+    <div id="error" class="hidden"></div>
+
+    <!-- Weather Card -->
+    <div id="weatherCard" class="card hidden">
+        <div class="weather-main">
+            <h2 id="cityName"></h2>
+            <div class="temp-display">
+                <span id="temp" class="temperature"></span>
+                <span id="condition" class="condition"></span>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="detail">
+                <span class="detail-label">Humidity:</span>
+                <span id="humidity" class="detail-value"></span>
+            </div>
+            <div class="detail">
+                <span class="detail-label">Wind:</span>
+                <span id="wind" class="detail-value"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

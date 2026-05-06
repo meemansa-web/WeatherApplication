@@ -1,0 +1,346 @@
+/* CSS Variables for Themes */
+:root {
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-secondary: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --accent: #ff6b6b;
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --button-bg: rgba(255, 255, 255, 0.2);
+    --button-hover: rgba(255, 255, 255, 0.3);
+}
+
+body.dark {
+    --bg-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --bg-secondary: rgba(0, 0, 0, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --card-bg: rgba(0, 0, 0, 0.3);
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --accent: #ff6b6b;
+    --input-bg: rgba(0, 0, 0, 0.2);
+    --button-bg: rgba(0, 0, 0, 0.3);
+    --button-hover: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Weather-based backgrounds */
+body.weather-clear {
+    --bg-primary: linear-gradient(135deg, #87CEEB 0%, #FFD700 100%);
+}
+
+body.weather-clouds {
+    --bg-primary: linear-gradient(135deg, #B0C4DE 0%, #778899 100%);
+}
+
+body.weather-rain {
+    --bg-primary: linear-gradient(135deg, #4682B4 0%, #2F4F4F 100%);
+}
+
+body.weather-snow {
+    --bg-primary: linear-gradient(135deg, #F0F8FF 0%, #B0E0E6 100%);
+}
+
+body.weather-thunderstorm {
+    --bg-primary: linear-gradient(135deg, #2F4F4F 0%, #000000 100%);
+}
+
+body.weather-mist {
+    --bg-primary: linear-gradient(135deg, #D3D3D3 0%, #A9A9A9 100%);
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.theme-toggle {
+    background: var(--button-bg);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.theme-toggle:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 15px 20px;
+    width: 70%;
+    max-width: 300px;
+    border: none;
+    border-radius: 25px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 0 20px var(--accent);
+    transform: scale(1.02);
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Unit Toggle */
+.unit-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.unit-toggle button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: var(--button-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.unit-toggle button:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* Loading and Error */
+#loading, #error {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+#loading {
+    background: var(--card-bg);
+    color: var(--accent);
+    font-weight: bold;
+}
+
+#error {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff6b6b;
+}
+
+/* Weather Card */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px var(--card-shadow);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--card-shadow);
+}
+
+.weather-main {
+    margin-bottom: 20px;
+}
+
+.weather-main h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.temp-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.condition {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .unit-toggle {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .theme-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .search-box button,
+    .unit-toggle button {
+        padding: 12px 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}
